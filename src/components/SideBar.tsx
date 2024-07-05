@@ -22,10 +22,11 @@ interface SideBarProps {
 
 export default function SideBar({ isSidebarVisible }: SideBarProps) {
   const { data: session, status } = useSession();
+  const [darkmode, setDarkmode] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  console.log('session', session);
+  console.log("session", session);
 
   const handleThemeChange = () => {
     if (theme === "light") {
@@ -38,6 +39,14 @@ export default function SideBar({ isSidebarVisible }: SideBarProps) {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (theme === "dark") {
+      setDarkmode(true);
+    } else {
+      setDarkmode(false);
+    }
+  }, [theme]);
 
   if (!mounted) return null;
 
@@ -85,12 +94,12 @@ export default function SideBar({ isSidebarVisible }: SideBarProps) {
           <Switch
             id="theme-button"
             onClick={handleThemeChange}
-            checked={theme === "dark"}
+            checked={darkmode}
           />
           <FaMoon />
         </div>
       </div>
-      {status === 'authenticated' ? (
+      {status === "authenticated" ? (
         <UserController session={session} />
       ) : (
         <LoginButton status={status} />
