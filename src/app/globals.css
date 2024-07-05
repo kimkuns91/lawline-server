@@ -2,32 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 100%; /* #FFFFFF */
+    --foreground: 0 0% 0%; /* #000000 */
+
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 0 0% 0%; /* #000000 */
+
+    --popover: 0 0% 100%; /* #FFFFFF */
+    --popover-foreground: 0 0% 0%; /* #000000 */
+
+    --primary: 132 86% 47%; /* #11DF39 */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --secondary: 0 0% 98%; /* #F9F9F9 */
+    --secondary-foreground: 0 0% 0%; /* #000000 */
+
+    --muted: 0 0% 74%; /* #BDBDBD */
+    --muted-foreground: 0 0% 40%; /* #757575 */
+
+    --accent: 197 98% 48%; /* #03A9F4 */
+    --accent-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --destructive: 0 100% 66%; /* #FF5252 */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --border: 0 0% 88%; /* #E0E0E0 */
+    --input: 0 0% 96%; /* #F5F5F5 */
+    --ring: 197 98% 48%; /* #03A9F4 */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 7%; /* #121212 */
+    --foreground: 0 0% 100%; /* #FFFFFF */
+
+    --card: 0 0% 7%; /* #121212 */
+    --card-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --popover: 0 0% 7%; /* #121212 */
+    --popover-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --primary: 132 86% 49%; /* #13E73D */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --secondary: 0 0% 13%; /* #212121 */
+    --secondary-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --muted: 0 0% 29%; /* #757575 */
+    --muted-foreground: 0 0% 60%; /* #BDBDBD */
+
+    --accent: 197 99% 41%; /* #0288D1 */
+    --accent-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --destructive: 0 79% 51%; /* #D32F2F */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --border: 0 0% 26%; /* #424242 */
+    --input: 0 0% 20%; /* #333333 */
+    --ring: 197 99% 41%; /* #0288D1 */
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
