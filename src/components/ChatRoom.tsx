@@ -143,7 +143,7 @@ const ChatRoom: React.FC<ChatRoomProps> = ({ roomInfo }) => {
     <div className={cn("w-full h-[95vh] lg:size-full", "flex flex-col relative")}>
       <div
         ref={chatContainerRef}
-        className="scrollbar flex flex-1 flex-col gap-6 overflow-y-auto px-4 py-6"
+        className="scrollbar flex flex-1 flex-col gap-6 overflow-y-auto px-4 py-12"
       >
         <div className="w-full lg:max-w-[800px] mx-auto px-4 md:px-28 md:py-6">
           {messages &&
@@ -155,7 +155,7 @@ const ChatRoom: React.FC<ChatRoomProps> = ({ roomInfo }) => {
         </div>
       </div>
       <form
-        className="mb-8 w-full lg:max-w-[800px] mx-auto px-4 lg:px-28"
+        className="mb-8 w-full lg:max-w-[800px] mx-auto px-8 md:px-4 lg:px-28"
         onSubmit={handleSubmit}
       >
         <div className="flex items-center justify-between rounded-full border border-slate-300 px-6 py-2 shadow-xl">

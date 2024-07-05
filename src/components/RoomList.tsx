@@ -46,7 +46,7 @@ const RoomList: React.FC<RoomListProps> = ({ session, status }) => {
   }
 
   return (
-    <div className={cn("flex-1 overflow-y-auto px-6 py-2")}>
+    <div className={cn("flex-1 overflow-y-auto px-0 md:px-6 py-2")}>
       <ul>
         {roomList &&
           roomList.map((room, i) => (
