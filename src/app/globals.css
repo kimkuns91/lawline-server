@@ -74,3 +74,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and 엣지 */
+  scrollbar-width: none;  /* 파이어폭스 */
+}

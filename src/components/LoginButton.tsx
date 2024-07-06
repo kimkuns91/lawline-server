@@ -13,10 +13,10 @@ const LoginButton: React.FC<LoginButtonProps> = ({ status }) => {
 
   if (status === "unauthenticated") {
     return (
-      <div className={cn("flex w-full px-6 py-8")}>
+      <div className={cn("flex w-full px-4 py-8")}>
         <Link
           className={cn(
-            "w-full flex justify-center items-center rounded bg-[#40ab55] text-white py-2",
+            "w-full flex justify-center items-center rounded-full bg-primary text-white py-2 text-lg font-bold",
             "hover:opacity-70"
           )}
           href="/login"

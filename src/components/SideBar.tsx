@@ -10,6 +10,7 @@ import LoginButton from "./LoginButton";
 import { MdHome } from "react-icons/md";
 import { RiRobot2Line } from "react-icons/ri";
 import RoomList from "./RoomList";
+import SkeletonList from "./SkeletonList";
 import { Switch } from "./ui/switch";
 import UserController from "./UserController";
 import { cn } from "@/lib/utils";
@@ -85,18 +86,33 @@ export default function SideBar({ isSidebarVisible }: SideBarProps) {
         />
       </div>
       <div className="p-4 px-6">
-        <p className="text-sm font-semibold">대화 내역</p>
+        <p className="text-primary text-sm font-semibold">대화 내역</p>
       </div>
-      <RoomList session={session} status={status} />
+      {status === "authenticated" ? (
+        <RoomList session={session} status={status} />
+      ) : (
+        <SkeletonList />
+      )}
       <div className="flex flex-col gap-4 items-center justify-center p-4">
-        <div className="flex items-center space-x-2">
-          <FaSun />
+        <div className="flex items-center space-x-4">
+          <FaSun
+            className={cn(
+              "text-2xl",
+              !darkmode ? "text-primary" : "text-muted"
+            )}
+          />
           <Switch
             id="theme-button"
+            className=""
             onClick={handleThemeChange}
             checked={darkmode}
           />
-          <FaMoon />
+          <FaMoon
+            className={cn(
+              "text-2xl",
+              darkmode ? "text-primary" : "text-muted"
+            )}
+          />
         </div>
       </div>
       {status === "authenticated" ? (

@@ -71,7 +71,7 @@ const ChatIntro: React.FC<ChatIntroProps> = ({ userId }) => {
         <form className="mb-4 w-full" onSubmit={handleSubmit}>
           <div className="flex flex-col bg-input rounded-2xl border border-muted px-4 py-4 shadow-xl">
             <textarea
-              className="flex-1 bg-transparent p-2 text-slate-900 placeholder:text-gray-500 focus:outline-none resize-none overflow-hidden"
+              className="flex-1 bg-transparent p-2 text-foreground placeholder:text-gray-500 focus:outline-none resize-none overflow-hidden"
               style={{
                 minHeight: "calc(1.5em * 4)",
                 maxHeight: "calc(1.5em * 8)",
@@ -100,13 +100,13 @@ const ChatIntro: React.FC<ChatIntroProps> = ({ userId }) => {
         <div className="w-full flex mb-4 gap-4 flex-col md:flex-row md:gap-2">
           <Link
             href="/"
-            className="flex md:flex-1 items-center justify-center px-8 py-6 bg-black rounded-full font-bold text-lg hover:opacity-60 transition-all ease-in-out duration-300"
+            className="flex md:flex-1 items-center justify-center px-8 py-6 shadow-xl bg-black text-white rounded-full font-bold text-lg hover:opacity-60 transition-all ease-in-out duration-300"
           >
             전문가 AI 찾기
           </Link>
           <Link
             href="/"
-            className="flex md:flex-[2] items-center justify-center px-8 py-6 bg-input border border-muted rounded-full font-bold text-lg hover:opacity-60 transition-all ease-in-out duration-300"
+            className="flex md:flex-[2] items-center justify-center px-8 py-6 shadow-xl bg-input border border-muted rounded-full font-bold text-lg hover:opacity-60 transition-all ease-in-out duration-300"
           >
             로라인 질문 가이드
             <FaArrowRight className="font-base ml-2" />
