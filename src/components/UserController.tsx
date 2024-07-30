@@ -1,8 +1,10 @@
-import { FiLogOut } from 'react-icons/fi';
-import Image from 'next/image';
-import { signOut } from 'next-auth/react';
-import { toast } from 'react-toastify';
-import { useRouter } from 'next/navigation';
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+
+import { FiLogOut } from "react-icons/fi";
+import Image from "next/image";
+import { signOut } from "next-auth/react";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 interface UserControllerProps {
   session: any;
@@ -11,23 +13,27 @@ interface UserControllerProps {
 const UserController: React.FC<UserControllerProps> = ({ session }) => {
   const router = useRouter();
   const handleLogout = () => {
-    if (window.confirm('로그아웃 하시겠습니까?')) {
-      toast.success('로그아웃 되었습니다.');
+    if (window.confirm("로그아웃 하시겠습니까?")) {
+      toast.success("로그아웃 되었습니다.");
       signOut();
-      router.push('/');
+      router.push("/");
     }
   };
   return (
     <div className="border-t">
       <div className="flex items-center justify-between px-4 py-4">
         <div className="flex items-center gap-4">
-          <Image
+          <Avatar>
+            <AvatarImage src={session?.user?.image} alt="user" />
+            <AvatarFallback>{session?.user?.name}</AvatarFallback>
+          </Avatar>
+          {/* <Image
             src={session?.user?.image}
             width={30}
             height={30}
             alt="User Profile"
             className="rounded-full"
-          />
+          /> */}
           <span className="font-bold">{session?.user?.name}</span>
         </div>
         <FiLogOut
