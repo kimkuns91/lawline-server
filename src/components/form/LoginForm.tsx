@@ -45,17 +45,21 @@ const LoginForm = () => {
       <div
         className={cn("flex w-full max-w-[330px] mx-auto flex-col gap-4 py-20")}
       >
-        <h2 className="text-2xl font-bold text-center">로라인 시작하기</h2>
-        <p className="text-lg text-center leading-8 text-[#777]">
-          로라인에게{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-            법률 상담
-          </span>
-          을 받아보세요.
+        <Link href="/">
+          <Image
+            className="cursor-pointer"
+            src="/images/Logo.png"
+            alt="LawLine Logo"
+            width={200}
+            height={80}
+          />
+        </Link>
+        <p className="text-base font-semibold text-left leading-8 text-[#777]">
+          로라인에서 법률 상담을 받아보세요.
         </p>
-        <div className="mt-8">
+        <div className="mt-2">
           <button
-            className="flex w-full flex-row items-center justify-center gap-3 rounded-md bg-[#FEE500] px-5 py-3 font-medium text-slate-900"
+            className="flex w-full flex-row items-center justify-center gap-3 rounded-md bg-[#FEE500] px-5 py-3 font-semibold text-slate-900"
             onClick={() =>
               signIn("kakao", { redirect: true, callbackUrl: "/" })
             }
@@ -92,14 +96,14 @@ const LoginForm = () => {
           <Button type="submit" className="">
             로그인
           </Button>
-          <div className="flex justify-center">
+          {/* <div className="flex justify-center">
             <Link
               href={"/changepassword"}
               className="border-b pb-1 transition-all ease-in-out hover:opacity-70 text-[#777]"
             >
               비밀번호 찾기
             </Link>
-          </div>
+          </div> */}
         </form>
         <div className="flex gap-2 items-center justify-center bg-[#F7F7F5] py-4 rounded-md">
           <p className="text-base font-bold text-[#777]">로라인이 처음이에요</p>

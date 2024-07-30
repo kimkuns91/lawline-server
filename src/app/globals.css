@@ -73,13 +73,30 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-.scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and 엣지 */
-  scrollbar-width: none;  /* 파이어폭스 */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and 엣지 */
+    scrollbar-width: none;  /* 파이어폭스 */
+  }
+  
+  .custom-border {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  .custom-border::before,
+  .custom-border::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .custom-border::before {
+    margin-right: 16px;
+  }
+  .custom-border::after {
+    margin-left: 16px;
+  }
 }
