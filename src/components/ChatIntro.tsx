@@ -97,7 +97,7 @@ const ChatIntro: React.FC<ChatIntroProps> = ({ userId }) => {
             </div>
           </div>
         </form>
-        <div className="w-full flex mb-4 gap-4 flex-col md:flex-row md:gap-2">
+        {/* <div className="w-full flex mb-4 gap-4 flex-col md:flex-row md:gap-2">
           <Link
             href="/"
             className="flex md:flex-1 items-center justify-center px-8 py-6 shadow-xl bg-black text-white rounded-full font-bold text-lg hover:opacity-60 transition-all ease-in-out duration-300"
@@ -111,7 +111,7 @@ const ChatIntro: React.FC<ChatIntroProps> = ({ userId }) => {
             로라인 질문 가이드
             <FaArrowRight className="font-base ml-2" />
           </Link>
-        </div>
+        </div> */}
         <span className="font-semibold text-muted text-sm md:text-base">
           * 로라인 봇의 법률 상담은 법적 효력을 가지지 않습니다
         </span>
