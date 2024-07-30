@@ -113,7 +113,11 @@ const ChatIntro: React.FC<ChatIntroProps> = ({ userId }) => {
           </Link>
         </div> */}
         <span className="font-semibold text-muted text-sm md:text-base">
-          * 로라인 봇의 법률 상담은 법적 효력을 가지지 않습니다
+          * 면책조항: 로라인 봇의 법률 정보 제공은 법적 효력을 가지지 않습니다.
+          법률적 해결은 변호사와 상담하시기 바랍니다.
+        </span>
+        <span className="font-semibold text-muted text-sm md:text-base">
+          *문의에 대한 법률정보 검토 및 추천외에 개인정보 이용 및 활용하지 않습니다.
         </span>
       </div>
     </div>

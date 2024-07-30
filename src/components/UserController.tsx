@@ -22,18 +22,11 @@ const UserController: React.FC<UserControllerProps> = ({ session }) => {
   return (
     <div className="border-t">
       <div className="flex items-center justify-between px-4 py-4">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
           <Avatar>
             <AvatarImage src={session?.user?.image} alt="user" />
             <AvatarFallback>{session?.user?.name}</AvatarFallback>
           </Avatar>
-          {/* <Image
-            src={session?.user?.image}
-            width={30}
-            height={30}
-            alt="User Profile"
-            className="rounded-full"
-          /> */}
           <span className="font-bold">{session?.user?.name}</span>
         </div>
         <FiLogOut
