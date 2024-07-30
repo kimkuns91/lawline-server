@@ -1,11 +1,10 @@
 import 'react-toastify/dist/ReactToastify.css';
 
-
 import { AIModel } from '@prisma/client';
 import Image from 'next/image';
 import React from 'react';
-import { toast } from 'react-toastify';
 import { cn } from '@/lib/utils';
+import { toast } from 'react-toastify';
 
 interface CharacterMessageProps {
   character: AIModel;
@@ -36,12 +35,12 @@ const CharacterMessage: React.FC<CharacterMessageProps> = ({
             height={32}
             alt={'profile'}
           />
-          <p className="text-base font-medium text-[#727272]">
+          <p className="text-base font-medium">
             {role === 'user' ? '나' : character.name}
           </p>
         </div>
       </div>
-      <div className="mt-1 ml-10 text-[#191919]">
+      <div className="mt-1 ml-10 text-foreground">
         <p className="text-base rounded-lg p-2 whitespace-pre-line">{content}</p>
       </div>
     </div>
